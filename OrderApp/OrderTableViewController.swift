@@ -28,6 +28,7 @@ class OrderTableViewController: UITableViewController {
         }
     }
     
+    
     @IBAction func submitTapped(_ sender: UIBarButtonItem) {
         let orderTotal = MenuController.shared.order.menuItems.reduce(0.0)
         { (result, menuItem) -> Double in
@@ -47,6 +48,7 @@ class OrderTableViewController: UITableViewController {
                                                 style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
+
     
     func uploadOrder() {
         let menuIds = MenuController.shared.order.menuItems.map { $0.id }
